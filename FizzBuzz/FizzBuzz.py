@@ -4,6 +4,6 @@ for i in range(1,101):
 		w+='Fizz'
 	if i%5==0:
 		w+='Buzz'
-	if i%3 and i%5:
+	if not w:
 		w=i
 	print(w)
