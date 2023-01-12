@@ -1,2 +1,2 @@
 # code_golf
-Code Golf challenges
+[Code Golf](https://code.golf/) challenges
