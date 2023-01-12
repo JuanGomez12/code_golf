@@ -1,9 +1,6 @@
 for i in range(1,1001):
-	cs={2:'Foo', 3:'Fizz', 5:'Buzz', 7:'Bar'}
-	w=''
-	for c in cs:
-		if i%c==0:
-			w+=cs[c]
+	d={2:'Foo',3:'Fizz',5:'Buzz',7:'Bar'}
+	w=''.join([d[c] for c in d if not i%c])
 	if not w:
 		w=i
 	print(w)
