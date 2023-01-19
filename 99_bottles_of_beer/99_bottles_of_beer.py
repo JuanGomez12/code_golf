@@ -12,5 +12,4 @@ def c(i):
 	else:
 		s=f'Go to the store and buy some more, {b(99)}.\n'
 	return s
-for i in range(99,-1,-1):
-	print(b(i).capitalize()+f', {b(i)[:-12]}.\n{c(i)}')
+for i in range(99,-1,-1):print(b(i).capitalize()+f', {b(i)[:-12]}.\n{c(i)}')
