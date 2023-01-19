@@ -4,8 +4,8 @@ def b(i):
 	elif i==1:
 		s=f'{i} bottle'
 	else:
-		s=f'no more bottles'
-	return f'{s} of beer on the wall'
+		s='no more bottles'
+	return s+' of beer on the wall'
 def c(i):
 	if i>0:
 		s=f'Take one down and pass it around, {b(i-1)}.\n'
