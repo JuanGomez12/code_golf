@@ -1,19 +1,18 @@
-d=' bottles'
-e=' of beer'
 w=' on the wall'
+f=' bottles of beer'
 def b(i):
 	if i>1:
-		s=f"{i}{d}"
+		s=f'{i}{f}'
 	elif i==1:
-		s=f"{i} bottle"
+		s=f'{i} bottle of beer'
 	else:
-		s=f'no more{d}'
+		s=f'no more{f}'
 	return s
 def c(i):
 	if i>0:
-		s=f'Take one down and pass it around, {b(i-1)}{e}{w}.\n'
+		s=f'Take one down and pass it around, {b(i-1)}{w}.\n'
 	else:
-		s=f'Go to the store and buy some more, 99{d}{e}{w}.\n'
+		s=f'Go to the store and buy some more, 99{f}{w}.\n'
 	return s
 for i in range(99,-1,-1):
-	print(b(i).capitalize()+f'{e}{w}, {b(i)}{e}.\n{c(i)}')
+	print(b(i).capitalize()+f'{w}, {b(i)}.\n{c(i)}')
