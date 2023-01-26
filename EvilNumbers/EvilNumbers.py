@@ -1,1 +1,1 @@
-[print(i) for i in range(50) if not f'{i:b}'.count('1')%2]
+[print(i) for i in range(50) if not bin(i).count('1')%2]
