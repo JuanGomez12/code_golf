@@ -5,7 +5,7 @@ on:
       - main
     types: [closed]
 jobs:
-  merge-master-back-to-dev:
+  merge-main-back-to-each-branch:
     if: github.event.pull_request.merged == true
     timeout-minutes: 2
     runs-on: ubuntu-latest
