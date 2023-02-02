@@ -1,0 +1,36 @@
+name: PRs to master
+on: 
+  pull_request:
+    branches:
+      - '!master'   # exclude master
+    types: [closed]
+jobs:
+  merge-master-back-to-dev:
+    if: github.event.pull_request.merged == true
+    timeout-minutes: 2
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set Git config
+      run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Github Actions"
+    - name: Merge master back to dev
+      run: |
+          git branch -r | grep -v '\->' | while read remote
+            do
+                if [[ "$remote" != *"main"* ]] && [[ "$remote" != *"HEAD"* ]] 
+                    then
+                        echo "---------------- Moving to ${remote#origin/} ----------------"
+                        git branch --track "${remote#origin/}" "$remote"
+                        echo "-----"
+                        git checkout "${remote#origin/}"
+                        echo "-----"
+                        git pull
+                        echo "-----"
+                        git merge --no-ff main -m "Auto-merge main back to $remote"
+                        echo "-----"
+                        git push
+                        echo "---------------- Done with ${remote#origin/} ---------------- "
+                fi
+            done
