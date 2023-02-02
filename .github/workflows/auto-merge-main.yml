@@ -1,4 +1,4 @@
-name: PRs to master
+name: Auto merge main after PR
 on: 
   pull_request:
     branches:
