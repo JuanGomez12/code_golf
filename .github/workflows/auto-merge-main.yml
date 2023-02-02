@@ -2,7 +2,7 @@ name: Auto merge main after PR
 on: 
   pull_request:
     branches:
-      - '!master'   # exclude master
+      - main
     types: [closed]
 jobs:
   merge-master-back-to-dev:
