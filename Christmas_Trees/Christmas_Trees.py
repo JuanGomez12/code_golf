@@ -1,5 +1,7 @@
-for i in range(3,10):
-	for j in range(1,i+1):
-		print(' '*(i-j+1)+'*'*(2*j-1))
-	print(' '*(i)+'*')
-	print('')
+r=range
+p=print
+for i in r(3,10):
+	for j in r(1,i+1):
+		p(' '*(i-j+1)+'*'*(2*j-1))
+	p(' '*(i)+'*')
+	p('')
