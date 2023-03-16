@@ -1,9 +1,9 @@
 import sys
 d={'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000}
-def r(a):
-    if len(a)>1:
+for arg in sys.argv[1:]:
+    if len(arg)>1:
         n=0
-        b=list(a)
+        b=list(arg)
         while b:
             m=d[b.pop(0)]
             if b and m<d[b[0]]:
@@ -11,7 +11,5 @@ def r(a):
             else:
                 n+=m
     else:
-        n=d[a]
-    return n
-for arg in sys.argv[1:]:
-    print(r(arg))
+        n=d[arg]
+    print(n)
