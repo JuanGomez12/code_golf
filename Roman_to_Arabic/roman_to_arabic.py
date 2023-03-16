@@ -10,8 +10,8 @@ def r(a):
                 n+=d[b.pop(0)]-m
             else:
                 n+=m
-        return n
     else:
-        return d[a]
+        n=d[a]
+    return n
 for arg in sys.argv[1:]:
     print(r(arg))
