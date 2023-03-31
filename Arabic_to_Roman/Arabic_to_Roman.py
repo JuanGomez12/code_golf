@@ -4,8 +4,8 @@ for a in sys.argv[1:]:
     a=int(a)
     b=''
     while a>0:
-        for key in sorted(list(d.keys()), reverse=True):
-            while a>=key:
-                b=b+d[key]
-                a-=key
+        for k in sorted(list(d.keys()), reverse=True):
+            while a>=k:
+                b=b+d[k]
+                a-=k
     print(b)
